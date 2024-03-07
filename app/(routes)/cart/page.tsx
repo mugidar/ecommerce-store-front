@@ -9,12 +9,6 @@ export const revalidate = 0;
 
 const CartPage = () => {
   const cart = useCart();
-  console.log(
-    cart.items.reduce((acc, cur) => {
-      return acc + Number(cur.price);
-    }, 0)
-  );
-  console.log(cart);
 
   return (
     <div>
@@ -29,8 +23,7 @@ const CartPage = () => {
               ))}
             </div>
           </div>
-
-          <Summary totalPrice={cart.totalPrice} />
+          <Summary />
         </div>
       </Container>
     </div>
