@@ -24,7 +24,6 @@ const Summary = () => {
     }
   }, [searchParams, clearCart]);
 
-  
   const onCheckout = async () => {
     const res = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
@@ -44,7 +43,9 @@ const Summary = () => {
           <Currency value={totalPrice} />
         </div>
       </div>
-      <Button onClick={onCheckout}>Checkout</Button>
+      <Button disabled={items.length == 0} onClick={onCheckout}>
+        Checkout
+      </Button>
     </div>
   );
 };
