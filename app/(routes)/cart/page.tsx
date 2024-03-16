@@ -2,7 +2,7 @@
 import CartItem from "@/components/CartItem/CartItem";
 import Container from "@/components/ui/container";
 import useCart from "@/hooks/user-cart";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Summary from "./components/summary";
 
 export const revalidate = 0;
@@ -23,7 +23,9 @@ const CartPage = () => {
               ))}
             </div>
           </div>
-          <Summary />
+          <Suspense fallback="Loading...">
+            <Summary />
+          </Suspense>
         </div>
       </Container>
     </div>
