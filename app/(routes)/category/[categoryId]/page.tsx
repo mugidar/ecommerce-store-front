@@ -24,7 +24,7 @@ interface CategoryPageProps {
     sizeId: string;
   };
 }
-
+export const revalidate = 0;
 const CategoryPage: React.FC<CategoryPageProps> = async ({
   params,
   searchParams,
